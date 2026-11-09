@@ -1,0 +1,266 @@
+/* ============================================================
+   传奇发布网 - 静态站点样式表
+   设计风格：暗金热血风，贴合传奇游戏调性，兼顾SEO与可读性
+   ============================================================ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: "Microsoft YaHei", "PingFang SC", "WenQuanYi Micro Hei", sans-serif;
+    background: #0e0a06;
+    color: #e8d9b8;
+    line-height: 1.7;
+    font-size: 14px;
+}
+a { color: #e8c46a; text-decoration: none; transition: color .2s; }
+a:hover { color: #ff5a2c; }
+img { max-width: 100%; display: block; }
+ul, ol { list-style: none; }
+.container { width: 1200px; max-width: 100%; margin: 0 auto; padding: 0 12px; }
+
+/* ---------- 顶部公告 ---------- */
+.topbar {
+    background: linear-gradient(90deg,#1a1208,#2a1c0c,#1a1208);
+    border-bottom: 1px solid #3a2a12;
+    font-size: 13px;
+    color: #b89a6a;
+}
+.topbar .container { display:flex; justify-content: space-between; align-items: center; height:36px; }
+.topbar .scroll-msg { overflow:hidden; white-space:nowrap; flex:1; }
+.topbar .scroll-msg span { color:#ff5a2c; margin-right:8px; }
+.topbar .links a { margin-left: 16px; color:#b89a6a; }
+
+/* ---------- 头部 ---------- */
+.header {
+    background: linear-gradient(180deg,#1c130a,#140d06);
+    border-bottom: 3px solid #6b4a1a;
+    padding: 26px 0 20px;
+}
+.header .container { display:flex; align-items:center; gap: 30px; }
+.logo { flex-shrink: 0; }
+.logo h1 {
+    font-size: 34px;
+    color: #ffd87a;
+    text-shadow: 0 0 12px rgba(255,140,40,.6), 2px 2px 0 #5a3000;
+    letter-spacing: 2px;
+    line-height: 1.1;
+}
+.logo .sub { color:#b89a6a; font-size:13px; margin-top:6px; letter-spacing:1px; }
+.search-box { flex:1; display:flex; }
+.search-box input {
+    flex:1; height:42px; padding:0 14px; border:none; outline:none;
+    background:#241807; color:#e8d9b8; border:1px solid #5a3e18; border-right:none;
+    font-size:15px;
+}
+.search-box button {
+    width:110px; height:42px; border:none; cursor:pointer;
+    background:linear-gradient(180deg,#ff8a3c,#c8501a); color:#fff; font-size:16px; font-weight:bold;
+}
+.search-box button:hover { background:linear-gradient(180deg,#ff9a50,#d86020); }
+
+/* ---------- 导航 ---------- */
+.nav-wrap { background:linear-gradient(180deg,#3a260e,#2a1a08); border-bottom:2px solid #5a3e18; }
+.nav { display:flex; }
+.nav a {
+    display:block; padding:13px 24px; color:#f0e0bc; font-size:15px; font-weight:bold;
+    border-right:1px solid rgba(255,255,255,.06);
+}
+.nav a:hover, .nav a.active { background:linear-gradient(180deg,#c8501a,#8a3010); color:#fff; }
+
+/* ---------- 面包屑 ---------- */
+.crumb {
+    padding:12px 0; font-size:13px; color:#8a7350;
+}
+.crumb a { color:#b89a6a; }
+
+/* ---------- 通用板块标题 ---------- */
+.sec-title {
+    display:flex; align-items:center; justify-content:space-between;
+    background:linear-gradient(90deg,#3a260e,#2a1a08);
+    border-left:5px solid #c8501a; padding:10px 16px; margin-bottom:16px;
+}
+.sec-title h2 { font-size:18px; color:#ffd87a; }
+.sec-title h2 small { font-size:13px; color:#b89a6a; font-weight:normal; margin-left:8px; }
+.sec-title .more { font-size:13px; color:#b89a6a; }
+.sec-title .more:hover { color:#ff5a2c; }
+
+/* ---------- 主体布局 ---------- */
+.main { padding:20px 0 40px; }
+.layout { display:flex; gap:24px; align-items:flex-start; }
+.col-left { flex:1; min-width:0; }
+.col-right { width:300px; flex-shrink:0; }
+
+/* ---------- Banner轮播 ---------- */
+.banner { position:relative; margin-bottom:24px; border:2px solid #5a3e18; overflow:hidden; }
+.banner-slides { position:relative; height:300px; }
+.slide {
+    position:absolute; inset:0; display:none;
+    background-size:cover; background-position:center;
+    flex-direction:column; justify-content:flex-end; padding:30px;
+}
+.slide.active { display:flex; }
+.slide::before { content:""; position:absolute; inset:0; background:linear-gradient(0deg,rgba(0,0,0,.85),rgba(0,0,0,.1)); }
+.slide .s-inner { position:relative; z-index:2; }
+.slide h3 { font-size:26px; color:#ffd87a; text-shadow:2px 2px 4px #000; margin-bottom:8px; }
+.slide p { color:#f0e0bc; font-size:14px; max-width:600px; }
+.slide .btn {
+    display:inline-block; margin-top:12px; padding:8px 22px; background:#c8501a; color:#fff;
+    font-weight:bold; border-radius:3px;
+}
+.banner-dots { position:absolute; bottom:14px; right:20px; z-index:3; display:flex; gap:8px; }
+.banner-dots i {
+    width:12px; height:12px; border-radius:50%; background:rgba(255,255,255,.4); cursor:pointer; display:block;
+}
+.banner-dots i.on { background:#ff5a2c; }
+
+/* ---------- 开服表 ---------- */
+.serv-table { width:100%; border-collapse:collapse; background:#1a1208; }
+.serv-table th {
+    background:linear-gradient(180deg,#4a3214,#2a1a08); color:#ffd87a; font-weight:bold;
+    padding:11px 8px; font-size:13px; border:1px solid #5a3e18; text-align:left;
+}
+.serv-table td { padding:9px 8px; border:1px solid #3a2a12; font-size:13px; }
+.serv-table tr:nth-child(even) td { background:rgba(255,255,255,.02); }
+.serv-table tr:hover td { background:rgba(200,80,26,.1); }
+.serv-table .st {
+    display:inline-block; padding:2px 8px; border-radius:2px; font-size:12px; color:#fff;
+}
+.st-hot { background:#c8501a; }
+.st-pre { background:#3a6ea5; }
+.st-run { background:#2e8b57; }
+.st-soon { background:#888; }
+
+/* ---------- 卡片列表（游戏下载） ---------- */
+.game-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+.game-card {
+    background:linear-gradient(180deg,#241807,#1a1208); border:1px solid #5a3e18;
+    padding:14px; transition:.2s; text-align:center;
+}
+.game-card:hover { border-color:#c8501a; transform:translateY(-3px); }
+.game-card .thumb {
+    height:100px; background:linear-gradient(135deg,#5a3e18,#2a1a08);
+    display:flex; align-items:center; justify-content:center; font-size:38px; margin-bottom:10px;
+}
+.game-card h4 { font-size:15px; color:#ffd87a; margin-bottom:6px; height:40px; overflow:hidden; }
+.game-card .meta { font-size:12px; color:#8a7350; margin-bottom:8px; }
+.game-card .dl {
+    display:inline-block; padding:5px 20px; background:linear-gradient(180deg,#ff8a3c,#c8501a);
+    color:#fff; font-size:13px; border-radius:2px; font-weight:bold;
+}
+.game-card .dl:hover { background:linear-gradient(180deg,#ff9a50,#d86020); }
+
+/* ---------- 文章列表 ---------- */
+.art-list li { border-bottom:1px dashed #3a2a12; }
+.art-list li a {
+    display:flex; align-items:center; justify-content:space-between; padding:10px 4px;
+}
+.art-list .t { color:#e8d9b8; flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.art-list .t::before { content:"•"; color:#c8501a; margin-right:8px; }
+.art-list .d { color:#8a7350; font-size:12px; flex-shrink:0; margin-left:10px; }
+
+.art-block { margin-bottom:26px; }
+
+/* ---------- 侧边栏 ---------- */
+.side-box { background:#1a1208; border:1px solid #5a3e18; margin-bottom:20px; }
+.side-box .hd {
+    background:linear-gradient(90deg,#3a260e,#2a1a08); border-left:5px solid #c8501a;
+    padding:9px 14px; font-size:15px; color:#ffd87a; font-weight:bold;
+}
+.side-box .bd { padding:14px; }
+.side-list li { border-bottom:1px dashed #3a2a12; }
+.side-list li a { display:block; padding:8px 2px; color:#d8c9a8; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.side-list li a::before { content:"›"; color:#c8501a; margin-right:6px; font-weight:bold; }
+.side-list li a:hover { color:#ff5a2c; }
+
+.tag-cloud a {
+    display:inline-block; padding:4px 10px; margin:0 6px 8px 0;
+    background:#241807; border:1px solid #5a3e18; font-size:13px; color:#e8c46a;
+}
+.tag-cloud a:hover { background:#c8501a; color:#fff; border-color:#c8501a; }
+
+.mini-serv li { display:flex; justify-content:space-between; padding:7px 0; border-bottom:1px dashed #3a2a12; font-size:13px; }
+.mini-serv .n { color:#e8d9b8; }
+.mini-serv .t { color:#8a7350; font-size:12px; }
+
+/* ---------- 排行榜 ---------- */
+.rank-list li { display:flex; align-items:center; padding:9px 0; border-bottom:1px dashed #3a2a12; }
+.rank-list .num {
+    width:22px; height:22px; line-height:22px; text-align:center; background:#5a3e18;
+    color:#e8d9b8; font-size:13px; font-weight:bold; margin-right:10px; flex-shrink:0;
+}
+.rank-list li:nth-child(1) .num { background:#c8501a; color:#fff; }
+.rank-list li:nth-child(2) .num { background:#d8901a; color:#fff; }
+.rank-list li:nth-child(3) .num { background:#8a6a2a; color:#fff; }
+.rank-list .rn { flex:1; color:#e8d9b8; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.rank-list .rc { color:#8a7350; font-size:12px; }
+
+/* ---------- 友情链接 ---------- */
+.flinks { background:#1a1208; border:1px solid #5a3e18; padding:16px; margin-top:24px; }
+.flinks .hd { color:#ffd87a; font-size:16px; margin-bottom:12px; font-weight:bold; }
+.flinks a { display:inline-block; margin:0 14px 8px 0; color:#b89a6a; }
+
+/* ---------- 页脚 ---------- */
+.footer {
+    background:linear-gradient(180deg,#1c130a,#0e0a06); border-top:3px solid #6b4a1a;
+    padding:30px 0 20px; color:#8a7350; font-size:13px;
+}
+.footer .f-cols { display:flex; gap:30px; margin-bottom:20px; }
+.footer .f-col { flex:1; }
+.footer .f-col h4 { color:#ffd87a; font-size:15px; margin-bottom:10px; }
+.footer .f-col a { display:block; padding:4px 0; color:#8a7350; }
+.footer .f-col a:hover { color:#ff5a2c; }
+.footer .copyright { text-align:center; border-top:1px solid #3a2a12; padding-top:16px; }
+.footer .seo-txt { max-width:900px; margin:0 auto 14px; color:#6a5a40; font-size:12px; text-align:center; }
+
+/* ---------- 文章详情 ---------- */
+.art-detail { background:#1a1208; border:1px solid #5a3e18; padding:26px; }
+.art-detail h1 { font-size:24px; color:#ffd87a; margin-bottom:12px; line-height:1.4; }
+.art-meta { font-size:13px; color:#8a7350; border-bottom:1px solid #3a2a12; padding-bottom:10px; margin-bottom:20px; }
+.art-body { font-size:15px; color:#d8c9a8; line-height:1.9; }
+.art-body h2 { font-size:18px; color:#ffd87a; margin:24px 0 12px; padding-left:10px; border-left:4px solid #c8501a; }
+.art-body p { margin-bottom:14px; }
+.art-body .lead { color:#f0e0bc; font-size:16px; background:rgba(200,80,26,.08); padding:14px; border-left:3px solid #c8501a; }
+.art-body .tags { margin-top:26px; padding-top:14px; border-top:1px solid #3a2a12; color:#b89a6a; }
+.rel-arts { margin-top:26px; }
+.rel-arts h3 { font-size:16px; color:#ffd87a; margin-bottom:10px; }
+
+/* ---------- 分类页 ---------- */
+.cat-head { background:linear-gradient(135deg,#2a1a08,#4a3214); border:1px solid #5a3e18; padding:24px; margin-bottom:20px; }
+.cat-head h1 { font-size:24px; color:#ffd87a; margin-bottom:8px; }
+.cat-head p { color:#b89a6a; font-size:14px; }
+
+/* ---------- 分页 ---------- */
+.pagination { text-align:center; margin:24px 0; }
+.pagination a, .pagination span {
+    display:inline-block; padding:7px 14px; margin:0 3px; background:#241807;
+    border:1px solid #5a3e18; color:#e8c46a; font-size:14px;
+}
+.pagination .current, .pagination a:hover { background:#c8501a; color:#fff; border-color:#c8501a; }
+
+/* ---------- 回到顶部 ---------- */
+#toTop {
+    position:fixed; right:24px; bottom:40px; width:44px; height:44px; line-height:44px;
+    text-align:center; background:#c8501a; color:#fff; font-size:22px; cursor:pointer;
+    display:none; z-index:99; border-radius:3px;
+}
+#toTop:hover { background:#ff5a2c; }
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 980px) {
+    .container { width:100%; }
+    .header .container { flex-direction:column; gap:16px; }
+    .layout { flex-direction:column; }
+    .col-right { width:100%; }
+    .game-grid { grid-template-columns:repeat(2,1fr); }
+    .nav { flex-wrap:wrap; }
+    .nav a { padding:10px 14px; }
+    .footer .f-cols { flex-direction:column; }
+    .slide h3 { font-size:20px; }
+    .banner-slides { height:220px; }
+}
+@media (max-width: 600px) {
+    .game-grid { grid-template-columns:1fr; }
+    .topbar .container { flex-direction:column; height:auto; padding:6px 12px; gap:4px; }
+    .serv-table { font-size:12px; }
+    .art-detail { padding:16px; }
+}
